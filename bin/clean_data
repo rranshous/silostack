@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 
-rm -r data/uuids.txt
-rm -r data/keys/*
-rm -r data/users/*
+#rm -r data/uuids.txt
+#rm -r data/keys/*
+#rm -r data/users/*
+rm -r data

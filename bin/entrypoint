@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+
+
+# make sure the data is setup
+if test -f "data/uuids.txt"
+then
+ echo "setup has already occured, skipping"
+else
+ echo "running server setup"
+ ./bin/setup_server
+fi
+
+
+# start the web server
+bash
