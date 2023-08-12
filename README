@@ -45,3 +45,11 @@ server data, folder structure:
      <epoch>.blob
 
 # PS: using epoch leaks data
+
+must the qr codes / physical key reps be generated
+at the same time the container is setup for the first time?
+if we leave a copy of the key on the disk (or write it down at all)
+than it could be getting backed up
+maybe for the first pass we delete the (private) key on the disk
+the first time the user logs in
+can make more secure later

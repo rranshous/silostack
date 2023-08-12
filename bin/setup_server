@@ -2,7 +2,7 @@
 
 HERE=`dirname "$0"`
 
-mkdir data || echo "data dir exists"
-$HERE/generate_uuids
-$HERE/generate_keys
-$HERE/generate_data_dirs
+mkdir -p data || echo "data dir exists"
+${HERE}/generate_uuids
+${HERE}/generate_keys
+${HERE}/generate_data_dirs

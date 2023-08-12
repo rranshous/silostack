@@ -5,6 +5,7 @@ while read uuid
 do
   # generate a public / private key pair
   pem_path=data/keys/${uuid}.pem
+  pub_pem_path=data/keys/${uuid}.pub.pem
   pub_path=data/keys/${uuid}.crt
   echo "generating ${pem_path}"
   openssl genrsa -out ${pem_path} 2048

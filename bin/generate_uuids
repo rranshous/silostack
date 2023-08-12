@@ -3,8 +3,10 @@
 # generate 100 uuids
 # output to the uuids file
 
-echo "generating 100 uuids to data/uuids.txt"
-for i in `seq 0 99`
+user_count="${1:-10}"
+
+echo "generating ${user_count} uuids to data/uuids.txt"
+for i in `seq 0 ${user_count}`
 do
   uuidgen >> data/uuids.txt
 done

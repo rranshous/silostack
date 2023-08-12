@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 
+HERE=`dirname "$0"`
 
 # make sure the data is setup
 if test -f "data/uuids.txt"
@@ -7,9 +8,7 @@ then
  echo "setup has already occured, skipping"
 else
  echo "running server setup"
- ./bin/setup_server
+ ${HERE}/setup_server
 fi
 
-
-# start the web server
-bash
+${HERE}/start_server
