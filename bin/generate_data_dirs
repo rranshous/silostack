@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+
+while read uuid
+do
+ echo "setting up dirs for ${uuid}"
+ mkdir -p data/users/${uuid}/settings \
+          data/users/${uuid}/posts \
+          data/users/${uuid}/blobs
+ while read uuid2
+ do
+  mkdir -p data/users/${uuid}/posts/${uuid2} \
+           data/users/${uuid}/blobs/${uuid2}
+ done < data/uuids.txt
+done < data/uuids.txt

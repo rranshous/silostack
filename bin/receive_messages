@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+
+my_uuid=$1
+while read their_uuid
+do
+ for file_path in `find data/users/${their_uuid}/posts/${my_uuid}/`
+ do
+  if test -f "${file_path}"; then
+   echo "message from ${their_uuid} `basename ${file_path}`"
+   openssl rsautl -in ${file_path} -inkey data/keys/${my_uuid}.pem -decrypt
+  fi
+ done
+done < data/uuids.txt

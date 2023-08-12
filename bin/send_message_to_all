@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+
+my_uuid=$1
+message=$2
+echo "from ${my_uuid} sending: ${message}"
+tmp_path=/tmp/${EPOCHREALTIME}
+echo "${message}" > ${tmp_path}
+while read their_uuid
+do
+ echo "sending to ${their_uuid}"
+ openssl rsautl -in ${tmp_path} -out data/users/${my_uuid}/posts/${their_uuid}/${EPOCHREALTIME}.jsonl.enc -inkey data/keys/${their_uuid}.crt -pubin -encrypt 
+done < data/uuids.txt

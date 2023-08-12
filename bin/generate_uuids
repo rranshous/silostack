@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+
+# generate 100 uuids
+# output to the uuids file
+
+echo "generating 100 uuids to data/uuids.txt"
+for i in `seq 0 99`
+do
+  uuidgen >> data/uuids.txt
+done

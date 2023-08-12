@@ -1,0 +1,47 @@
+aimed at small max # of users
+every user is connected(able?) with every other user
+users can partition away other users
+"social network" all on one container
+end to end encryption
+aim at ~flat files
+all state lives on the servers disk
+server lives in single container
+_not_ aiming at CoW / perminant history
+simple posting / following mechanism
+w/ e2e encryption if you weren't broadcast to you'll never see it
+w/ the small community size every message can be individually encrypted for the target user
+start out w/ all the users already created w/ random handles, passwords & keys
+enable changing passwords
+server is meant to be very private. if you don't have a key/account you can't view
+
+
+social features:
+  post images, gifs, text
+  dm's
+  allow follows
+  all posts are "private", only followers can see them
+  user can delete posts
+  all users are followers of each other, by default
+
+
+keep data flat. everything for other ppl is namespaced under
+the recipient account uuid
+every message is encrypted seperately for every user, using the
+target user's "public" (internally) encryption key
+
+server data, folder structure:
+/data/
+ uuids.txt
+ keys/
+  <user_uuid>.pem
+  <user_uuid>.crt
+ users/
+  <user_uuid>
+   posts/
+    <recipient_uuid>/
+      <epoch>.jsonl
+   blobs/
+    <recipient_uuid>/
+     <epoch>.blob
+
+# PS: using epoch leaks data
