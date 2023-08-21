@@ -53,3 +53,16 @@ than it could be getting backed up
 maybe for the first pass we delete the (private) key on the disk
 the first time the user logs in
 can make more secure later
+
+
+TODO: 
+SSL w/in main app, solution w/o another container
+
+
+CMDS:
+
+# creates a seperate, encrypted message for each receiver from the sender
+./bin/send_message_to_all <sender-guid> 'message content'
+
+# reads through all senders message boxes for given receiver, decrypting and showing all messages
+./bin/receive_messages <receiver-guid>
